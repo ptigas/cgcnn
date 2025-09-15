@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cgcnn"
+version = "0.1.0"
+description = "Crystal Graph Convolutional Neural Networks for predicting material properties"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Tian Xie", email = "txie@mit.edu"},
+    {name = "Jeffrey C. Grossman", email = "jcgross@mit.edu"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=1.9.0",
+    "numpy>=1.21.0",
+    "pymatgen>=2022.0.0",
+    "scikit-learn>=1.0.0",
+    "ase>=3.22.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "black>=22.0",
+    "flake8>=4.0",
+    "mypy>=0.900"
+]
+
+[project.urls]
+Homepage = "https://github.com/txie-93/cgcnn"
+Repository = "https://github.com/txie-93/cgcnn"
+Documentation = "https://github.com/txie-93/cgcnn"
+"Bug Tracker" = "https://github.com/txie-93/cgcnn/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cgcnn*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
